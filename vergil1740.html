@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #6200ea;
+            color: white;
+            padding: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin-top: 20px;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        .preview-container {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            border: 2px solid #6200ea;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #6200ea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #3700b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Немного о герое</h1>
+    </header>
+    <main>
+        <p>Вергилий старший брат близнец главного героя Данте, по совместительству второй главный герой, воокруг братьев крутиться сюжет всей серии игр, новелл и прочего.
+		   Вергилий выглядит похожим на Данте, белые волосы голубые глаза и рост до 200 сантиметров, носит голубой плащ, из вооружения имеет Ямато которое может разделять пространство,
+		   создавать порталы, разделять демона и человека и открывать/закрывать портал в преисподнюю, также может превращатся в форму демона и иметь почти точно такие же спобособности
+           как и свой брат. Его характер более самоуверен и закрыт в себе, в отличии от своего брата он предпочитает насмехаться над своим врагом		   </p>
+
+
+        <a href="index.html">Назад на главную</a>
+    </main>
+
+    <script>
+        // Просмотр загруженного изображения
+        const fileInput = document.getElementById('fileInput');
+        const preview = document.getElementById('preview');
+
+        fileInput.addEventListener('change', function () {
+            const file = fileInput.files[0];
+            if (file && file.type === 'image/png') {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result; // Устанавливаем изображение
+                };
+                reader.readAsDataURL(file); // Читаем файл как Data URL
+            } else {
+                alert('Пожалуйста, выберите PNG-файл.');
+            }
+        });
+    </script>
+</body>
+</html>
